@@ -25,6 +25,26 @@
     margin-top: 4rem;
     margin-bottom: 4rem;
 }
+#projects ul {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    list-style: none;
+    gap: 1rem
+}
+#projects li {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border: 1px solid rgb(55, 61, 108);
+    box-shadow: 8px 5px 5px rgba(99, 123, 187, 0.527);
+    padding: 1rem 2rem 1rem 3rem; 
+    padding-bottom: 1.1rem;
+    border-radius: 12px;
+    width: 45%;
+    text-transform: capitalize;
+    color: rgb(8, 37, 84);
+}
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
     nav { 

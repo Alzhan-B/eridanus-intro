@@ -61,5 +61,27 @@ messageForm.item(0).addEventListener("submit", (event) => {
     newMessage.appendChild(editButton);
     messageList.appendChild(newMessage);
     
-    document.querySelector('form').reset();
+    document.querySelector("form").reset();
 });
+//Creating new XHR object
+var githubRequest = new XMLHttpRequest();
+// githubRequest.onreadystatechange = function () {
+//     if (githubRequest.readyState === 4) {   
+//     }
+// }
+githubRequest.open("GET", "https://api.github.com/users/Alzhan-B/repos");
+githubRequest.send();
+githubRequest.addEventListener("load", () => {
+    var repositories = JSON.parse(githubRequest.responseText);
+    console.log(repositories);
+
+    const projectSection = document.getElementById("projects");
+    const projectList = projectSection.querySelector("ul");
+
+    for (let i=0; i<repositories.length; i++) {
+        let project = document.createElement("li");
+        project.innerText = repositories[i].name;
+        projectList.appendChild(project);
+    }
+});
+

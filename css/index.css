@@ -93,7 +93,7 @@ nav a:hover::before {
 ul.role {
     display: flex;
     flex-direction: column;
-    margin: 1em;
+    margin: 1rem;
     padding: 1rem;
     flex-wrap: wrap;
 }
@@ -114,6 +114,7 @@ ul.role {
     padding: 10px; 
     list-style: none;
     border-radius: 12px;
+    box-shadow: 8px 5px 5px rgba(99, 123, 187, 0.527);
 } 
 #experience ul,
 #skills ul,
@@ -138,6 +139,7 @@ ul.role {
     width: fit-content;
     gap: 30px;
 }
+#projects li:hover,
 #experience li:hover,
 #skills li:hover,
 #connect p:hover,
@@ -150,6 +152,7 @@ ul.role {
     width: 8rem;
     margin-top: 20px;
     text-align: center;
+    box-shadow: 8px 5px 5px rgba(99, 123, 187, 0.527);
 }
 #leave_message label {
     font-size: medium;

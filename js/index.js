@@ -6,7 +6,7 @@ const copyright = document.createElement("p");
 copyright.innerHTML = ` Alzhan Braliyev &copy ${thisYear}`;
 footer.appendChild(copyright);
 
-//Putting skills in HTML in ul and li
+// -- Putting skills in HTML in ul and li
 const skills = ["Java Script", "HTML", "CSS", "Node.js", "Mocha", "React", "MySQL"]; 
 const skillsSection = document.getElementById("skills");
 const skillsList = skillsSection.querySelector("ul");
@@ -15,7 +15,7 @@ for (let i = 0; i < skills.length; i++) {
     skill.innerText = skills[i];
     skillsList.appendChild(skill);
 }
-// Creating Messages form with input fields
+// -- Creating Messages form with input fields
 const messageForm = document.getElementsByName("leave_message");
 messageForm.item(0).addEventListener("submit", (event) => { 
     event.preventDefault();  
@@ -31,7 +31,7 @@ messageForm.item(0).addEventListener("submit", (event) => {
     newMessage.innerHTML = `<a href="mailto:${emailInput}">${nameInput}</a> <span> ${messageInput} </span>`;
     messageList.appendChild(newMessage);
 
-//Remove button and disappearing Messages section
+// -- Remove button and disappearing Messages section
     const removeButton = document.createElement("button");
     removeButton.innerText = "Remove";
     removeButton.type = "button";
@@ -48,7 +48,7 @@ messageForm.item(0).addEventListener("submit", (event) => {
     newMessage.appendChild(removeButton);
     messageList.appendChild(newMessage);
 
-//Creating Edit button and new input prompt
+// -- Creating Edit button and new input prompt
     const editButton = document.createElement("button");
     editButton.innerText = "Edit";
     editButton.type = "button";
@@ -62,26 +62,78 @@ messageForm.item(0).addEventListener("submit", (event) => {
     messageList.appendChild(newMessage);
     
     document.querySelector("form").reset();
+
+    removeButton.style.backgroundColor = '#ff0545';
+    removeButton.style.color = '#fff';
+    removeButton.style.border = 'none';
+    removeButton.style.borderRadius = '4px';
+    removeButton.style.padding = '8px 16px';
+    removeButton.style.marginRight = '8px';
+    removeButton.style.cursor = 'pointer';
+    removeButton.style.fontSize = 'small';
+    removeButton.style.justifyContent = "center"
+
+    editButton.style.backgroundColor = '#wa745';
+    editButton.style.color = '#fff';
+    editButton.style.border = 'none';
+    editButton.style.borderRadius = '4px';
+    editButton.style.padding = '8px 16px';
+    editButton.style.marginRight = '8px';
+    editButton.style.cursor = 'pointer';
+    editButton.style.fontSize = 'small';
+    editButton.style.justifyContent = "center"
 });
-//Creating new XHR object
-var githubRequest = new XMLHttpRequest();
-// githubRequest.onreadystatechange = function () {
-//     if (githubRequest.readyState === 4) {   
+
+// Function for fixing the date
+const dateFixer = (date) => {
+        return date.slice(0, 10);
+}
+// -- Creating new XHR object
+// var githubRequest = new XMLHttpRequest();
+// githubRequest.open("GET", "https://api.github.com/users/Alzhan-B/repos");
+// githubRequest.send();
+// githubRequest.addEventListener("load", () => {
+//     var repositories = JSON.parse(githubRequest.responseText);
+//     console.log(repositories);
+
+//     const projectSection = document.getElementById("projects");
+//     const projectList = projectSection.querySelector("ul");
+
+//     for (let i=0; i<repositories.length; i++) {
+//         let project = document.createElement("li");
+//         project.innerText = repositories[i].name;
+//         projectList.appendChild(project);
 //     }
-// }
-githubRequest.open("GET", "https://api.github.com/users/Alzhan-B/repos");
-githubRequest.send();
-githubRequest.addEventListener("load", () => {
-    var repositories = JSON.parse(githubRequest.responseText);
-    console.log(repositories);
+// });
 
-    const projectSection = document.getElementById("projects");
-    const projectList = projectSection.querySelector("ul");
+// -- Fetching API by using fetch call method and .then method
+fetch("https://api.github.com/users/Alzhan-B/repos")
+    .then(response => response.json())
+    .then(repositories => {
+        const projectSection = document.getElementById("projects");
+        const projectList = projectSection.querySelector("ul");
+    
+        repositories.forEach(repository => {
+            let project = document.createElement("li");
 
-    for (let i=0; i<repositories.length; i++) {
-        let project = document.createElement("li");
-        project.innerText = repositories[i].name;
-        projectList.appendChild(project);
-    }
-});
+            let projectLink = document.createElement("a");
+            projectLink.innerText = repository.name;
+            projectLink.href = repository.html_url;
+            projectLink.target = "_blank";
 
+            let projectDescription = document.createElement("p");
+            projectDescription.innerText = repository.description;
+            
+            let projectDate = document.createElement("p");
+            projectDate.innerText = dateFixer(repository.pushed_at)
+
+            project.appendChild(projectLink);
+            // project.appendChild(projectDescription);
+            project.appendChild(projectDate);
+            projectList.appendChild(project);
+
+            project.style.listStyleType = "none";
+            project.style.margin = "1rem";
+        });
+    })
+    .catch(error => console.error(error)); // -- Strech goal: handing errors from th server

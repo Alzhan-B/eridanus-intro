@@ -27,23 +27,25 @@
 }
 #projects ul {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
     list-style: none;
-    gap: 1rem
+    gap: 0.5rem;
 }
 #projects li {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     justify-content: space-around;
-    border: 1px solid rgb(55, 61, 108);
     box-shadow: 8px 5px 5px rgba(99, 123, 187, 0.527);
-    padding: 1rem 2rem 1rem 3rem; 
-    padding-bottom: 1.1rem;
+    padding: 1rem 2rem 0.2rem 3rem; 
     border-radius: 12px;
-    width: 45%;
+    width: 65%;
     text-transform: capitalize;
     color: rgb(8, 37, 84);
+    background-color: rgb(225, 233, 252);
+}
+#projects li p {
+    font-size: small;
 }
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
@@ -79,8 +81,9 @@
         flex-direction: row;
     }
     .my-photo {
-        margin-top: 1.1rem;
-        margin-right: 5rem ;      
+        margin-top: 1.8rem;
+        margin-right: 5rem ;     
+        margin-left: 3rem ;       
     }
 }
 @media screen and (min-width: 1025px) {
@@ -103,10 +106,23 @@
         flex-direction: row;
     }
     .my-photo {
-        margin-right: 5rem ;      
+        margin-top: 1.8rem;
+        margin-right: 5rem ;     
+        margin-left: 3rem ;       
     }
     .item-1.item {
         margin-left: 5rem;
         margin-right: 3rem;
     }   
+}
+@media screen and (min-width: 1300px) {
+    body {
+        margin-left: 10rem;
+        margin-right: 10rem;
+    }
+    .my-photo {
+        margin-top: 1.7rem;
+        margin-right: 6rem ;     
+        margin-left: 2rem ;       
+    }
 }

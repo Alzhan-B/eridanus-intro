@@ -30,6 +30,12 @@
     flex-direction: column;
     list-style: none;
     gap: 0.5rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    justify-content: space-around;
+    border-bottom: 1px solid rgba(0, 0, 128, 0.226);
+    
 }
 #projects li {
     display: flex;
@@ -47,6 +53,16 @@
 #projects li p {
     font-size: small;
 }
+ul.menu {
+    float: right;
+    margin: auto;
+    padding: auto;
+    margin-right: 0px;
+    margin-left: 20px;
+    margin-top: 20px;
+    padding-left: 40px;
+    padding-right: 0px;
+}
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
     nav { 
@@ -59,21 +75,33 @@
         display: inline-flex;
         margin: 1rem;
     }
+    footer p {
+        margin-left: 3rem;
+    }
 }  
 @media screen and (min-width: 769px) and (max-width: 1024px) { 
+    body {
+        font-size: 1.2rem;
+    }
     .container-header {
+        display: flex;
+        text-align: right;
+        margin-right: 4rem;
         justify-content: space-around;  
     }
     .my-logo {
-        margin: 20px;
+        margin: auto;
+        margin-left: 5rem;
     }
     nav {
         width: 100%;
     }
     .navbar ul {
-        flex-direction: row;
-        margin-left: 0rem;
-        margin-top: 3.5rem;
+        display: inline-flex;
+        /* flex-wrap: wrap; */
+        flex-direction: column;
+        /* margin-left: 4rem; */
+        /* margin-top: 3.5rem; */
         justify-content: space-around;
         font-size: medium;
     }
@@ -85,20 +113,31 @@
         margin-right: 5rem ;     
         margin-left: 3rem ;       
     }
+    footer p {
+        margin-left: 3rem;
+    }
 }
 @media screen and (min-width: 1025px) {
+    body {
+        font-size: 1.2rem;
+    }
+    img.my-logo {
+        margin-left: 5rem;
+    }
     .container-header {
         justify-content: space-around;    
     }
     .my-logo {
         margin: 30px;
+        margin-right: 0px;
     }
     nav {
         width: 100%;
     }
     .navbar ul {
+        display: flex;
         flex-direction: row;
-        margin-top: 4rem;
+        margin-top: 3.7rem;margin-right: 4rem;
         justify-content: space-around;
         font-size: large;
     }
@@ -106,23 +145,45 @@
         flex-direction: row;
     }
     .my-photo {
-        margin-top: 1.8rem;
-        margin-right: 5rem ;     
-        margin-left: 3rem ;       
+        height: 150px;
+        margin: auto;
+        margin-right: 2rem;
     }
     .item-1.item {
         margin-left: 5rem;
         margin-right: 3rem;
     }   
+    footer p {
+        margin-left: 3rem;
+    }
 }
 @media screen and (min-width: 1300px) {
     body {
         margin-left: 10rem;
         margin-right: 10rem;
     }
+    .navbar ul {
+        display: flex;
+        margin: auto;
+        margin-top: 3.7rem;
+        margin-right: 3rem;
+        /* width: fit-content; */
+        justify-content: space-around;
+        font-size: large;
+    }
+    img.my-logo {
+        margin-left: 3rem;
+        margin-right: 0px;
+    }
     .my-photo {
-        margin-top: 1.7rem;
-        margin-right: 6rem ;     
-        margin-left: 2rem ;       
+        height: 150px;
+        margin: auto;
+        margin-right: 2rem;
+    }
+    .card {
+        padding-left: 170px;
+    }
+    footer p {
+        margin-left: 50px;
     }
 }

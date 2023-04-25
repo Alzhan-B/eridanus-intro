@@ -1,14 +1,21 @@
 body {
-    font-size: 1.35rem;
+    /* font-size: 1.35rem; */
     font-family: "Varela Round", sans-serif;
     color: rgb(48, 41, 141);
     background-color:  rgba(245, 247, 251, 0.718);
     padding-left: 5%;
     padding-right: 5%;
 }
+html {
+    scroll-padding-top: 13rem;
+}
+.my-photo {
+    height: 13vh;
+    transform: scaleX(-1);
+}
 header {
-    /* background: #b3cafc; */
-    background: rgb(202, 219, 250);
+    z-index: 1;
+    background: rgb(188, 213, 249);
     font-size: 1rem;
     width: 100%;
     top: 0;
@@ -24,6 +31,7 @@ img {
 .navbar ul {
     margin: 1.2rem;
     padding: 0px;
+    font-size: small;
 }
 nav li {
     margin: 0 0 0.5rem 2.2rem; 
@@ -33,6 +41,7 @@ nav a {
     color: #444;
     text-decoration: none;
     text-transform: uppercase;
+    color: rgb(51, 57, 110);
 }
 nav a:hover {
     color: rgb(69, 102, 222);
@@ -67,18 +76,15 @@ nav a:hover::before {
 	border-radius: 13px;
     text-align: center;
 }
-.my-photo {
-    height: 13vh;
-}
 h1 {
-    color: rgb(72, 83, 159);
+    color: rgb(118, 129, 196);
     font-size: 50px;
     font-weight: 750;  
     margin-left: 2rem; 
 }
 h2 {
     /* color: rgb(63, 105, 183); */
-    color: rgb(198, 115, 206);
+    color: rgb(195, 111, 202);
     font-size: auto;
     padding-top: 1rem;
     margin: 0px;
@@ -111,7 +117,6 @@ ul.role {
     text-decoration: none;
 }
 #experience li, #skills li, #connect p {
-    /* border: 1px solid grey; */
     background-color: rgb(225, 233, 252);
     padding: 10px; 
     list-style: none;
@@ -145,26 +150,60 @@ ul.role {
     width: fit-content;
     gap: 2.5rem;
 }
+.container-1.connect,
+.container-1.form,
+.container-1.skills ul,
+.container-1.experience ul,
+.container-1.projects ul { 
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(0, 0, 128, 0.226);
+}
 #projects li:hover,
 #experience li:hover,
 #skills li:hover,
 #connect p:hover,
 .connect a:hover {
     list-style: none;
-    background-color: rgba(151, 185, 243, 0.511);
-    color: rgb(2, 23, 82);
+    /* background-color: rgba(151, 185, 243, 0.511); */
+    background-color: rgba(236, 213, 248, 0.761);
+    color: rgb(37, 71, 164);
 }
 #skills li {
     width: 8rem;
     margin-top: 20px;
     text-align: center;
 }
+.about p {
+    color: rgb(43, 92, 151);
+}
+#skills li a,
+#projects li a,
+#experience li,
+#connect p a {
+    text-decoration: none; 
+    color: rgb(22, 86, 164);
+}
+.emphasis {
+    color: #a2a1a2;
+    font-size: small;
+}
 #leave_message label {
     font-size: medium;
 }
 .form {
     max-width: 250px;
-    margin: 20px;   
+    margin: 20px;  
+    color: rgb(100, 126, 172); 
+}
+form {
+    margin-top: 1.5rem;
+}
+.container-1.messages ul li {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    flex-grow: 1;
+    flex-direction: column;
 }
 .container-1.messages ul {
     display: flex;
@@ -174,7 +213,8 @@ ul.role {
 .container-1.messages ul li {   
     display: flex;
     flex-direction: row;
-    border-bottom: 1px solid navy;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 0, 128, 0.274);
     flex-grow: 1;
 }
 .messages a,
@@ -186,37 +226,72 @@ ul.role {
     justify-content: space-between;
     font-size: large;
 }
-/* Buttons for Edit and Remove */
-.leave_message button,
-.messages ul li button {
-    background-color: rgb(57, 82, 160);
-    color: white;
-    max-width: 90px;
-    min-width: 90px;
-    height: 35px;
+/* Buttons for Submit, Edit and Remove */
+.container-1.form button {
+    background-color: rgba(164, 193, 243, 0.511);
+    border-radius: 6px;
+    border: solid 1px #8a8a8b75;
+    color:  rgb(21, 76, 143);
     padding: 5px 25px;
-    margin-bottom: 4px;
     font-size: medium;
 }
-.leave_message button:hover,
-#messages button:hover {
-    /* background-color: rgba(70, 154, 223, 0.652); */
-    color: rgb(3, 34, 65);
+.container-1.form button:hover {
+    background-color:  rgb(198, 115, 206);
+    color: white;
     padding: 5px 25px;
     font-size: medium;
     cursor: pointer;
-    background-color: rgb(106, 142, 248);
+}
+.container-1.messages .RemoveButton {
+    background-color: rgba(220, 69, 117, 0.652);
+    color:white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    margin-right: 8px;
+    max-height: 30px;
+    max-width: 70px;
+    cursor: pointer;
+    font-size: small;
+    justify-content: center;
+}
+.container-1.messages .EditButton {
+    background-color:rgba(45, 132, 245, 0.652);
+    color:white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 25px;
+    margin-right: 8px;
+    max-height: 30px;
+    max-width: 70px;
+    cursor: pointer;
+    font-size: small;
+    justify-content: center;
+    }
+.container-1.messages .RemoveButton:hover {
+    background-color: rgb(183, 50, 50);
+}
+.container-1.messages .EditButton:hover {
+    background-color: rgb(63, 136, 232);
 }
 input,
 textarea {
-    width: 85%;
-    font-size: 1rem;
+    width: 95%;
+    font-size: medium;
+    font-family: Arial, sans-serif;
     padding: 5px 2px;
+    padding-left: 1rem;
     margin-top: 5px;
     margin-bottom: 5px;
+    border: solid 1px #a0a9bb;
+    color: #444;
+}
+input:focus,
+textarea:focus {
+   outline: none;
 }
 footer {
-    background-color: rgb(213, 223, 248);
+    background-color: rgba(240, 191, 240, 0.612);
     padding: 20px 20px;
     text-align: left;
     font-size: normal;
@@ -224,4 +299,19 @@ footer {
     box-shadow: 10px 5px 5px rgba(10, 35, 97, 0.527);
     border-top: 0.5px solid rgb(157, 175, 201);
     border-left: 0.5px solid rgb(157, 175, 201);
+    color: rgb(131, 96, 130);
+}
+.socialMedias{
+    float: right;
+    justify-content: right;
+}
+li.socialMedias {
+    list-style-type: none;
+    margin-right: 3rem;
+}
+.nav2 li a {
+    color: #444;
+}
+.nav2 li a:hover {
+    color: rgb(59, 138, 234);
 }

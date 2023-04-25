@@ -74,6 +74,10 @@ ul.menu {
         display: inline-flex;
         margin: 1rem;
     }
+    .form {
+        margin: auto;
+        margin-bottom: 1rem;
+    }
     footer p {
         margin-left: 3rem;
     }
@@ -97,10 +101,7 @@ ul.menu {
     }
     .navbar ul {
         display: inline-flex;
-        /* flex-wrap: wrap; */
         flex-direction: column;
-        /* margin-left: 4rem; */
-        /* margin-top: 3.5rem; */
         justify-content: space-around;
         font-size: medium;
     }
@@ -111,6 +112,16 @@ ul.menu {
         margin-top: 1.8rem;
         margin-right: 5rem ;     
         margin-left: 3rem ;       
+    }
+    #experience li {
+        padding-left: 6rem;
+    }
+    .form {
+        margin: auto;
+        margin-bottom: 1rem;
+    }
+    #projects li {
+        padding-left: 6rem;
     }
     footer p {
         margin-left: 3rem;
@@ -152,6 +163,16 @@ ul.menu {
         margin-left: 5rem;
         margin-right: 3rem;
     }   
+    #experience li {
+        padding-left: 6rem;
+    }
+    .form {
+        margin: auto;
+        margin-bottom: 1rem;
+    }
+    #projects li {
+        padding-left: 6rem;
+    }
     footer p {
         margin-left: 3rem;
     }
@@ -166,7 +187,6 @@ ul.menu {
         margin: auto;
         margin-top: 3.7rem;
         margin-right: 3rem;
-        /* width: fit-content; */
         justify-content: space-around;
         font-size: large;
     }
@@ -181,6 +201,17 @@ ul.menu {
     }
     .card {
         padding-left: 170px;
+        margin-left: 3rem;
+    }
+    #experience li {
+        padding-left: 6rem;
+    }
+    #projects li {
+        padding-left: 6rem;
+    }
+    .form {
+        margin: auto;
+        margin-bottom: 1rem;
     }
     footer p {
         margin-left: 50px;

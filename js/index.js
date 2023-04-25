@@ -15,6 +15,8 @@ footer.appendChild(copyright);
 //     skill.innerText = skills[i];
 //     skillsList.appendChild(skill);
 // }
+
+// -- Putting skills in HTML in ul and li and creating links
 const skills = [
     { name: "Java Script", link: "https://www.javascript.com/" },
     { name: "HTML", link: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
@@ -92,27 +94,10 @@ messageForm.item(0).addEventListener("submit", (event) => {
     document.querySelector("form").reset();
 
     // removeButton.style.backgroundColor = 'darkred';
-    // removeButton.style.color = '#fff';
-    // removeButton.style.border = 'none';
-    // removeButton.style.borderRadius = '4px';
-    // removeButton.style.padding = '8px 16px';
-    // removeButton.style.marginRight = '8px';
-    // removeButton.style.cursor = 'pointer';
-    // removeButton.style.fontSize = 'small';
-    // removeButton.style.justifyContent = "center"
-
     // editButton.style.backgroundColor = '#wa745';
-    // editButton.style.color = '#fff';
-    // editButton.style.border = 'none';
-    // editButton.style.borderRadius = '4px';
-    // editButton.style.padding = '8px 16px';
-    // editButton.style.marginRight = '8px';
-    // editButton.style.cursor = 'pointer';
-    // editButton.style.fontSize = 'small';
-    // editButton.style.justifyContent = "center"
 });
 
-// Function for fixing the date
+// -- Function for fixing the date
 const dateFixer = (date) => {
         return date.slice(0, 10);
 }
